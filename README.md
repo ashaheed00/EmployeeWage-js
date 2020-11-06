@@ -1,3 +1,3 @@
 # EmployeeWage-js
 
-## UC2_CalculateDailyWage
+## UC3_Function_CalculateDailyWage
