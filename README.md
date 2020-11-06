@@ -1,3 +1,3 @@
 # EmployeeWage-js
 
-## UC6_StroreDailyWageAndTotalWage
+## UC7_ArrayHelperFunctionImpemented
