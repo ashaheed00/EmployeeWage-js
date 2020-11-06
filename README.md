@@ -1,3 +1,3 @@
 # EmployeeWage-js
 
-## UC1_CheckEmpPresence
+## UC2_CalculateDailyWage
