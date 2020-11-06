@@ -1,3 +1,3 @@
 # EmployeeWage-js
 
-## UC4_WageForMonth_20Days
+## UC5_TotalWageFor_20DaysOr160Hours
