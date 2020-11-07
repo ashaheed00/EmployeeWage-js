@@ -144,3 +144,63 @@ empDailyHourMap.forEach(storeInWorkHourArray);
 console.log("Full Time Work Days: " + fullTimeWorkDays);
 console.log("Part Time Work Days: " + partTimeWorkDays);
 console.log("No Work Days: " + nonWorkDays);
+
+// UC10
+console.log("\n****UC10****");
+let empDailyWageArrayObject = new Array();
+days = 0;
+totalEmpHrs = 0;
+while (
+  days < NO_OF_MONTHLY_WORKING_DAYS &&
+  totalEmpHrs < MAX_MONTHLY_WORKING_HRS
+) {
+  empCheck = Math.floor(Math.random() * 10) % 3;
+  let empHours = getEmpHours(empCheck);
+  totalEmpHrs += empHours;
+  empDailyWageArrayObject.push({
+    day: ++days,
+    dailyHours: empHours,
+    dailyWage: calculateDailyWage(empHours),
+    toString() {
+      return (
+        "\nDay" +
+        this.day +
+        " => Working Hours = " +
+        this.dailyHours +
+        " Daily Wage = " +
+        this.dailyWage
+      );
+    },
+  });
+}
+console.log("Emp Wage Object Array: " + empDailyWageArrayObject);
+
+// UC 10a
+let totalwage = empDailyWageArrayObject
+  .filter((emp) => emp.dailyHours > 0)
+  .reduce((totalWage, emp) => (totalWage += emp.dailyWage), 0);
+console.log("\nUC10a - Total wage using arrow functions : " + totalwage);
+
+totalHours = empDailyWageArrayObject
+  .filter((emp) => emp.dailyHours > 0)
+  .reduce((totalHrs, emp) => (totalHrs += emp.dailyHours), 0);
+console.log("UC10a - Total hours using arrow functions : " + totalHours);
+
+// UC10b
+fullTimeWorkDays = empDailyWageArrayObject
+  .filter((emp) => emp.dailyHours == 8)
+  .map((emp) => emp.day);
+console.log("\nUC10b - Full Working days : " + fullTimeWorkDays);
+
+// UC10c
+partTimeWorkDays = empDailyWageArrayObject
+  .filter((emp) => emp.dailyHours == 4)
+  .map((emp) => emp.day);
+console.log("\nUC10c - Part Working days : " + partTimeWorkDays);
+
+// UC10d
+
+nonWorkDays = empDailyWageArrayObject
+  .filter((emp) => emp.dailyHours == 0)
+  .map((emp) => emp.day);
+console.log("\nUC10d - Non Working days : " + nonWorkDays);
