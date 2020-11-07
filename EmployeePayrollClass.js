@@ -3,6 +3,8 @@ class EmployeePayroll {
     this.id = params[0];
     this.name = params[1];
     this.salary = params[2];
+    this.gender = params[3];
+    this.startDate = params[4];
   }
 
   get id() {
@@ -23,14 +25,34 @@ class EmployeePayroll {
   set salary(salary) {
     this._salary = salary;
   }
+  get gender() {
+    return this._gender;
+  }
+  set gender(gender) {
+    this._gender = gender;
+  }
+  get startDate() {
+    return this._startDate;
+  }
+  set startDate(startDate) {
+    this._startDate = startDate;
+  }
+
   toString() {
-    return (
-      "id: " + this.id + ", name: " + this.name + ", salary: " + this.salary
-    );
+    const format = { year: "numeric", month: "long", day: "numeric" };
+    const date =
+      this.startDate === undefined
+        ? "undefined"
+        : this.startDate.toLocaleDateString("en-US", format);
+    return `id:${this.id}, name:${this.name}, salary:${this.salary}, gender:${this.gender}, startDate:${date}`;
   }
 }
 
 let employeePayroll = new EmployeePayroll(1, "Kalyan", 1200000);
 console.log(employeePayroll.toString());
 employeePayroll.name = "Rashmi";
+employeePayroll.gender = "F";
+console.log(employeePayroll.toString());
+
+employeePayroll = new EmployeePayroll(1, "Sharad", 2000000, "M", new Date());
 console.log(employeePayroll.toString());
