@@ -1,3 +1,3 @@
 # EmployeeWage-js
 
-## UC13_Regex_ValidatingName
+## UC14_Regex_ValidatingAllPropertise
