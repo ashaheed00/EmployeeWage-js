@@ -1,3 +1,3 @@
 # EmployeeWage-js
 
-## UC8_ImplementationOfMapInEmpWage
+## UC9_UseOf_ArrayFunctions
